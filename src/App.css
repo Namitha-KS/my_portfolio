@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #000;  /* Set background color to black */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Landing page styles */
+.landing-page {
+  display: flex;
+  height: 100vh;  /* Set height to 100% viewport height */
+  width: 100vw;  /* Set width to 100% viewport width */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Left section styles */
+.left-section {
+  flex: 1;  /* Divide available space equally between left and right sections */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Profile picture styles */
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure image fills the container */
+}
+
+/* Name image styles */
+.name-image {
+  width: 200px;
+}
+
+.name-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Right section styles */
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;  /* Add spacing between buttons */
+}
+
+/* Button styles */
+button {
+  width: 750px;  /* Set button width to 100px */
+  height: 50px;  /* Set button height to 10px */
+  padding: 10px;  /* Adjust padding to accommodate text within button size */
+  border: 2px solid #ff0000;  /* Border properties */
+  border-radius: 5px;
+  font-size: 14px;  /* Adjust font size to fit within button height */
+  cursor: pointer;
+  background-color: #000000;  /* Set button background color to white */
+  color: #ffffff;  /* Set button text color to black */
+  text-align: center;  /* Center text within button */
+}
+
+/* Can add hover effects for buttons here (optional) */
+button:hover {
+  background-color: #000000;
+  color: #fff;  /* Change background color on hover */
 }
