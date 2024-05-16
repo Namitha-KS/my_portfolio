@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './icons/logo.png'; 
+import twitterLogo from './icons/twitter.png';
+import linkedinLogo from './icons/linkedin.png';
+import instagramLogo from './icons/instagram.png';
+import emailLogo from './icons/email.png';
+import githubLogo from './icons/github.png';
+import spotifyLogo from './icons/spotify.png';
+import telegramLogo from './icons/telegram.png';
+import discordLogo from './icons/discord.png';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -17,8 +24,8 @@ function App() {
     <div className="App">
       <header className="header">
         <nav className="navbar">
-          <div className="logo">
-            <img src={logo} alt="Logo" />
+        <div className="logo">
+            <div className="cool-font">NA<span class="green-letter">M</span>ITHA S</div>
           </div>
         </nav>
       </header>
@@ -51,6 +58,20 @@ function App() {
           </div>
         </div>
       )}
+
+      <footer className="footer">
+        <div className="social-icons">
+          <img src={emailLogo} alt="Email" onClick={() => navigateToExternalLink('namigowri2006@gmail.com')} />
+          <img src={githubLogo} alt="GitHub" onClick={() => navigateToExternalLink('https://github.com/Namitha-KS')} />
+          <img src={twitterLogo} alt="Twitter" onClick={() => navigateToExternalLink('https://twitter.com/13_cs2')} />
+          <img src={linkedinLogo} alt="LinkedIn" onClick={() => navigateToExternalLink('https://www.linkedin.com/in/nami-tha-s/')} />
+          <img src={telegramLogo} alt="Telegram" onClick={() => navigateToExternalLink('namigowri2006@gmail.com')} />
+          <img src={discordLogo} alt="Discord" onClick={() => navigateToExternalLink('namigowri2006@gmail.com')} />
+          <img src={instagramLogo} alt="Instagram" onClick={() => navigateToExternalLink('https://www.instagram.com/namitha.ks/')} />
+          <img src={spotifyLogo} alt="Spotify" onClick={() => navigateToExternalLink('namigowri2006@gmail.com')} />
+        </div>
+        <p>&copy; 2024 Namitha S</p>
+      </footer>
     </div>
   );
 }
