@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namitha S - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(32,32,32);
+      color: rgb(71, 163, 111);
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      height: 100vh; 
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3.5rem; 
+      width: 100%; 
+      position: absolute; 
+      top: 0; 
+    }
+
+    .navbar-name {
+      font-family: 'Press Start 2P', sans-serif; 
+      font-size: 2.5rem; 
+      font-weight: bold;
+    }
+
+    .navbar-resume {
+      padding: 0.8rem 1.5rem; 
+      border: 1px solid rgb(71, 163, 111);
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.5rem; 
+    }
+
+    .navbar-name span.red-m {
+      color: rgb(255, 255, 255);
+      animation: blink 1s infinite; 
+    }
+
+    @keyframes blink {
+      0%, 10%, 90%, 100% { opacity: 1; } 
+      20%, 80% { opacity: 0; }           
+      50% { opacity: 0; }                
+    }
+
+    
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5rem; 
+    }
+
+    .buttons button, .unplugged-buttons button {
+      padding: 1.5rem 3rem; 
+      font-size: 1.5rem; 
+      background-color: rgb(32,32,32);
+      color: rgb(71, 163, 111);
+      border: 1px solid rgb(71, 163, 111);
+      border-radius: 4px;
+      margin: 1rem 0;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      width: 100%; 
+      max-width: 500px; 
+    }
+
+    .buttons button:hover, .unplugged-buttons button:hover {
+      background-color: rgb(35,66,61);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      background-color: black;
+      color: rgb(43,89,63);
+      border: 2px solid rgb(43,89,63);
+      transform: translate(-50%, -50%);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+      overflow: hidden; 
+    }
+
+    
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.5rem; 
+    }
+
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 999;
+    }
+
+    
+    .unplugged-buttons {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 1rem;
+      text-align: center;
+      width: 100%; 
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-name">
+      NA<span class="red-m">M</span>ITHA S
+    </div>
+    <div class="navbar-resume">RESUME</div>
+  </div>
+
+  <div class="buttons">
+    <button id="plugged">PLUGGED</button>
+    <button id="unplugged">UNPLUGGED</button>
+    <button id="connect">CONNECT WITH ME</button>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="popup">
+    <span class="popup-close">X</span>
+    <div class="unplugged-buttons" id="unplugged-buttons">
+      <button class="unplugged-btn" onclick="window.open('https://www.google.com', '_blank')">CASE STUDIES</button>
+      <button class="unplugged-btn" onclick="window.open('https://medium.com/@namigowri2006', '_blank')">MEDIUM</button>
+      <button class="unplugged-btn" onclick="window.open('https://fancy-daughter-219.notion.site/0c0d770c954c4b8b971c69513b5bde23?v=345d7486f7724194a58f13c5b195b9ed&pvs=74', '_blank')">AI BLOGS</button>
+      <button class="unplugged-btn" onclick="window.open('https://minnie-mouse.stck.me/', '_blank')">PERSONAL BLOGS</button>
+      <button class="unplugged-btn" onclick="window.open('https://open.spotify.com/user/31ipaw3iz3n7coyqhn73mwy4kjcq', '_blank')">SPOTIFY</button>
+    </div>
+  </div>
+
+  <script>
+    const pluggedButton = document.getElementById('plugged');
+    const unpluggedButton = document.getElementById('unplugged');
+    const connectButton = document.getElementById('connect');
+    const resumeButton = document.querySelector('.navbar-resume');
+    const popup = document.querySelector('.popup');
+    const overlay = document.querySelector('.overlay');
+    const closePopup = document.querySelector('.popup-close');
+
+    pluggedButton.addEventListener('mouseenter', () => {
+      pluggedButton.textContent = 'WHAT I HAVE CODED SO FAR';
+    });
+    pluggedButton.addEventListener('mouseleave', () => {
+      pluggedButton.textContent = 'PLUGGED';
+    });
+
+    unpluggedButton.addEventListener('mouseenter', () => {
+      unpluggedButton.textContent = 'DIGITAL GARDEN';
+    });
+    unpluggedButton.addEventListener('mouseleave', () => {
+      unpluggedButton.textContent = 'UNPLUGGED';
+    });
+
+    connectButton.addEventListener('mouseenter', () => {
+      connectButton.textContent = 'EMAIL IS BETTER';
+    });
+    connectButton.addEventListener('mouseleave', () => {
+      connectButton.textContent = 'CONNECT WITH ME';
+    });
+
+    unpluggedButton.addEventListener('click', () => {
+      overlay.style.display = 'block';
+      popup.style.display = 'flex';
+      document.getElementById('unplugged-buttons').style.display = 'flex';
+    });
+
+    overlay.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+    closePopup.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
